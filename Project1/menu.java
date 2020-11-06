@@ -1,25 +1,27 @@
+
+
 import java.util.*;
 
-public class menu {
+public class Menu {
 	Scanner in = new Scanner(System.in);
 	int menu;
 	HashMap<String, Integer> keyboardmap = new HashMap<>();
 	ArrayList<Product> productlist = new ArrayList<>(); 
 	Product product = new Product();
 
-	public menu() {
+	public Menu() {
 		input();
 	}
 
 	public void input() {
 		while(true) {
 			System.out.println("\n");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
 			System.out.println("  menu");
-			System.out.println("1. ¸¶¿ì½º");
-			System.out.println("2. Å°º¸µå");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.print("»óÇ°ÀÔ·Â>");
+			System.out.println("1. ë§ˆìš°ìŠ¤");
+			System.out.println("2. í‚¤ë³´ë“œ");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.print("ìƒí’ˆì…ë ¥>");
 			menu = in.nextInt();
 
 			switch (menu) {
@@ -31,7 +33,7 @@ public class menu {
 				break;
 
 			default:
-				System.out.println("1,2·Î ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				System.out.println("1,2ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				break;		
 			}
 
@@ -45,59 +47,62 @@ public class menu {
 		exit:
 			while(true) {
 				System.out.println("\n");
-				System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-				keyboardmap.put("»¡°£Å°º¸µå", 1000);
-				keyboardmap.put("³ë¶õÅ°º¸µå", 2000);
-				keyboardmap.put("ÃÊ·ÏÅ°º¸µå", 3000);
+				System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+				keyboardmap.put("ë¹¨ê°„í‚¤ë³´ë“œ", 1000);
+				keyboardmap.put("ë…¸ë€í‚¤ë³´ë“œ", 2000);
+				keyboardmap.put("ì´ˆë¡í‚¤ë³´ë“œ", 3000);
 
 				int index = 1;
 				Iterator<String> keys = keyboardmap.keySet().iterator();
 
 				while (keys.hasNext()) {
 					String key = keys.next();
-					System.out.println(index +"."+ key + ", °¡°İ : " + keyboardmap.get(key));
+					System.out.println(index +"."+ key + ", ê°€ê²© : " + keyboardmap.get(key));
 					index++;
 				}
-				System.out.println("4.µÚ·Î°¡±â");
-				System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-				System.out.print("»óÇ°¼±ÅÃ >");
+				System.out.println("4.ë’¤ë¡œê°€ê¸°");
+				System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+				System.out.print("ìƒí’ˆì„ íƒ >");
 				int keyboard = in.nextInt();
 
 				switch (keyboard) {
 				case 1:
-					product("»¡°£Å°º¸µå");
+					product("ë¹¨ê°„í‚¤ë³´ë“œ");
 
 					break;
 				case 2:
-					product("³ë¶õÅ°º¸µå");
+					product("ë…¸ë€í‚¤ë³´ë“œ");
 
 					break;
 				case 3:
-					product("ÃÊ·ÏÅ°º¸µå");
+					product("ì´ˆë¡í‚¤ë³´ë“œ");
 
 					break;
 				case 4:
 					break exit;
 
 				default:
-					System.out.println("1~3±îÁö ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					System.out.println("1~3ê¹Œì§€ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					break;
 				}
 			}
 	}
 
 	public void product(String Product) {
-		System.out.println(Product+ "¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+		System.out.println(Product+ "ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 		System.out.println("\n");
-		System.out.println("1.Àå¹Ù±¸´Ï¿¡ ³Ö±â");
-		System.out.println("2.°áÁ¦ÇÏ±â");
-		System.out.println("3.Ãë¼ÒÇÏ±â");
-		System.out.print("ÀÔ·Â >");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+
+		System.out.println("1.ì¥ë°”êµ¬ë‹ˆì— ë„£ê¸°");
+		System.out.println("2.ê²°ì œí•˜ê¸°");
+		System.out.println("3.ì·¨ì†Œí•˜ê¸°");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.print("ì…ë ¥ >");
 
 		int menu1 = in.nextInt();
 		switch (menu1) {
 		case 1:
-			System.out.println("Àå¹Ù±¸´Ï¿¡ ´ã°å½À´Ï´Ù");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆì— ë‹´ê²¼ìŠµë‹ˆë‹¤");
 			product.setProductname(Product);
 			product.setProductprice(keyboardmap.get(Product));
 			productlist.add(product);
@@ -108,21 +113,23 @@ public class menu {
 			pay();
 			break;
 		case 3:
-			System.out.println(Product + "¸¦ Ãë¼ÒÇÏ¼Ì½À´Ï´Ù. ¸ŞÀÎÈ­¸éÀ¸·Î µ¹¾Æ°©´Ï´Ù");
+			System.out.println(Product + "ë¥¼ ì·¨ì†Œí•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ì¸í™”ë©´ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 			input();
 			break;
 
 		default:
-			System.out.println("1~3±îÁö ÀÔ·Â°¡´ÉÇÕ´Ï´Ù");
+			System.out.println("1~3ê¹Œì§€ ì…ë ¥ê°€ëŠ¥í•©ë‹ˆë‹¤");
 			break;
 		}
 	}
 
 	public void gobasket() {
 		System.out.println("\n");
-		System.out.println("1.Àå¹Ù±¸´Ï°¡±â");
-		System.out.println("2.¸Ş´º°¡±â");
-		System.out.print("ÀÔ·Â >");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.println("1.ì¥ë°”êµ¬ë‹ˆê°€ê¸°");
+		System.out.println("2.ë©”ë‰´ê°€ê¸°");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.print("ì…ë ¥ >");
 
 		int menu2 = in.nextInt();
 		if (menu2 ==1) {
@@ -139,20 +146,22 @@ public class menu {
 		}
 		if (!productlist.isEmpty()) {
 			System.out.println(" ");
-			System.out.println("¹°°ÇÀÌ¸§  |  °¡°İ");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.println("     ì¥ë°”êµ¬ë‹ˆ");
+			System.out.println("ë¬¼ê±´ì´ë¦„\t|   ê°€ê²©");
 			for (int i = 0; i < productlist.size(); i++) {
-				System.out.println(productlist.get(i).productname +" |"+ productlist.get(i).productprice);
+				System.out.println(productlist.get(i).productname +"\t|   "+ productlist.get(i).productprice);
 			}
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.println("ÃÑ °¡°İ :" + sum);
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.println("ì´ ê°€ê²© :" + sum);
 		}if (productlist.isEmpty()) {
-			System.out.println("Àå¹Ù±¸´Ï°¡ ºñ¾îÀÖÀ½");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆê°€ ë¹„ì–´ìˆìŒ");
 		}
 
 
-		System.out.println("1.°áÁ¦ÇÏ±â");
-		System.out.println("2.¼îÇÎÇÏ±â");
-		System.out.print("ÀÔ·Â >");
+		System.out.println("1.ê²°ì œí•˜ê¸°");
+		System.out.println("2.ì‡¼í•‘í•˜ê¸°");
+		System.out.print("ì…ë ¥ >");
 
 		int menu = in.nextInt();
 
