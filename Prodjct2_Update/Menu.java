@@ -1,4 +1,4 @@
-package abc;
+package Prodjct2_Update;
 
 import java.util.*;
 
@@ -20,10 +20,23 @@ public class Menu {
 		customerdata();
 		customercarddata();
 		input();
-		
+
 	}
 
-	private void customercarddata() {
+	private void customerdata() {
+		for (int i = 0; i < customer.length; i++) {
+			customer[i] = new Customer();
+		}
+		customer[0].setPersonname("ê¹€ì¬í˜„");		
+		customer[1].setPersonname("ê¹€ê°€ê°€");
+		customer[2].setPersonname("ê¹€ë‚˜ë‚˜");
+		customer[3].setPersonname("ê¹€ë‹¤ë‹¤");
+		customer[4].setPersonname("ê¹€ë¼ë¼");
+	}
+
+
+
+	private void customercarddata() {//ì¹´ë“œë²ˆí˜¸ë°ì´í„°
 		for (int i = 0; i < card.length; i++) {
 			card[i] = new Card();
 		}
@@ -40,12 +53,12 @@ public class Menu {
 	public void input() {
 		while(true) {
 			System.out.println("\n");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
 			System.out.println("  menu");
-			System.out.println("1. ¸¶¿ì½º");
-			System.out.println("2. Å°º¸µå");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.print("»óÇ°ÀÔ·Â> ");
+			System.out.println("1. ë§ˆìš°ìŠ¤");
+			System.out.println("2. í‚¤ë³´ë“œ");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.print("ìƒí’ˆì…ë ¥> ");
 			menu = in.nextInt();
 
 			switch (menu) {
@@ -57,7 +70,7 @@ public class Menu {
 				break;
 
 			default:
-				System.out.println("1,2·Î ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				System.out.println("1,2ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				break;		
 			}
 
@@ -71,62 +84,62 @@ public class Menu {
 		exit:
 			while(true) {
 				System.out.println("\n");
-				System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-				keyboardmap.put("»¡°£Å°º¸µå", 1000);
-				keyboardmap.put("³ë¶õÅ°º¸µå", 2000);
-				keyboardmap.put("ÃÊ·ÏÅ°º¸µå", 3000);
+				System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+				keyboardmap.put("ë¹¨ê°„í‚¤ë³´ë“œ", 1000);
+				keyboardmap.put("ë…¸ë€í‚¤ë³´ë“œ", 2000);
+				keyboardmap.put("ì´ˆë¡í‚¤ë³´ë“œ", 3000);
 
 				int index = 1;
 				Iterator<String> keys = keyboardmap.keySet().iterator();
 
 				while (keys.hasNext()) {
 					String key = keys.next();
-					System.out.println(index +"."+ key + ", °¡°İ : " + keyboardmap.get(key));
+					System.out.println(index +"."+ key + ", ê°€ê²© : " + keyboardmap.get(key));
 					index++;
 				}
-				System.out.println("4.µÚ·Î°¡±â");
-				System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-				System.out.print("»óÇ°¼±ÅÃ >");
+				System.out.println("4.ë’¤ë¡œê°€ê¸°");
+				System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+				System.out.print("ìƒí’ˆì„ íƒ >");
 				int keyboard = in.nextInt();
 
 				switch (keyboard) {
 				case 1:
-					product("»¡°£Å°º¸µå");
+					product("ë¹¨ê°„í‚¤ë³´ë“œ");
 
 					break;
 				case 2:
-					product("³ë¶õÅ°º¸µå");
+					product("ë…¸ë€í‚¤ë³´ë“œ");
 
 					break;
 				case 3:
-					product("ÃÊ·ÏÅ°º¸µå");
+					product("ì´ˆë¡í‚¤ë³´ë“œ");
 
 					break;
 				case 4:
 					break exit;
 
 				default:
-					System.out.println("1~3±îÁö ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					System.out.println("1~3ê¹Œì§€ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					break;
 				}
 			}
 	}
 
 	public void product(String Product) {
-		System.out.println(Product+ "¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+		System.out.println(Product+ "ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 		System.out.println("\n");
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
 
-		System.out.println("1.Àå¹Ù±¸´Ï¿¡ ³Ö±â");
-		System.out.println("2.°áÁ¦ÇÏ±â");
-		System.out.println("3.Ãë¼ÒÇÏ±â");
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.print("ÀÔ·Â > ");
+		System.out.println("1.ì¥ë°”êµ¬ë‹ˆì— ë„£ê¸°");
+		System.out.println("2.ê²°ì œí•˜ê¸°");
+		System.out.println("3.ì·¨ì†Œí•˜ê¸°");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.print("ì…ë ¥ > ");
 
 		int menu1 = in.nextInt();
 		switch (menu1) {
 		case 1:
-			System.out.println("Àå¹Ù±¸´Ï¿¡ ´ã°å½À´Ï´Ù");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆì— ë‹´ê²¼ìŠµë‹ˆë‹¤");
 			product.setProductname(Product);
 			product.setProductprice(keyboardmap.get(Product));
 			productlist.add(product);
@@ -134,26 +147,29 @@ public class Menu {
 			gobasket();
 			break;
 		case 2:
+			product.setProductname(Product);
+			product.setProductprice(keyboardmap.get(Product));
+			productlist.add(product);
 			pay();
 			break;
 		case 3:
-			System.out.println(Product + "¸¦ Ãë¼ÒÇÏ¼Ì½À´Ï´Ù. ¸ŞÀÎÈ­¸éÀ¸·Î µ¹¾Æ°©´Ï´Ù");
+			System.out.println(Product + "ë¥¼ ì·¨ì†Œí•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ì¸í™”ë©´ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 			input();
 			break;
 
 		default:
-			System.out.println("1~3±îÁö ÀÔ·Â°¡´ÉÇÕ´Ï´Ù");
+			System.out.println("1~3ê¹Œì§€ ì…ë ¥ê°€ëŠ¥í•©ë‹ˆë‹¤");
 			break;
 		}
 	}
 
 	public void gobasket() {
 		System.out.println("\n");
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.println("1.Àå¹Ù±¸´Ï°¡±â");
-		System.out.println("2.¸Ş´º°¡±â");
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.print("ÀÔ·Â >");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.println("1.ì¥ë°”êµ¬ë‹ˆê°€ê¸°");
+		System.out.println("2.ë©”ë‰´ê°€ê¸°");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.print("ì…ë ¥ >");
 
 		int menu2 = in.nextInt();
 		if (menu2 ==1) {
@@ -170,22 +186,22 @@ public class Menu {
 		}
 		if (!productlist.isEmpty()) {
 			System.out.println(" ");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.println("     Àå¹Ù±¸´Ï");
-			System.out.println("¹°°ÇÀÌ¸§\t|   °¡°İ");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.println("     ì¥ë°”êµ¬ë‹ˆ");
+			System.out.println("ë¬¼ê±´ì´ë¦„\t|   ê°€ê²©");
 			for (int i = 0; i < productlist.size(); i++) {
 				System.out.println(productlist.get(i).productname +"\t|   "+ productlist.get(i).productprice);
 			}
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.println("ÃÑ °¡°İ :" + sum);
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.println("ì´ ê°€ê²© :" + sum);
 		}if (productlist.isEmpty()) {
-			System.out.println("Àå¹Ù±¸´Ï°¡ ºñ¾îÀÖÀ½");
+			System.out.println("ì¥ë°”êµ¬ë‹ˆê°€ ë¹„ì–´ìˆìŒ");
 		}
 
 
-		System.out.println("1.°áÁ¦ÇÏ±â");
-		System.out.println("2.¼îÇÎÇÏ±â");
-		System.out.print("ÀÔ·Â >");
+		System.out.println("1.ê²°ì œí•˜ê¸°");
+		System.out.println("2.ì‡¼í•‘í•˜ê¸°");
+		System.out.print("ì…ë ¥ >");
 
 		int menu = in.nextInt();
 
@@ -196,7 +212,7 @@ public class Menu {
 		}
 	}
 
-	public void pay() {//°áÁ¦¸Ş¼Òµå
+	public void pay() {//ê²°ì œë©”ì†Œë“œ
 		paymenu();
 		confirm();
 
@@ -204,28 +220,36 @@ public class Menu {
 
 	private void paymenu() {
 		System.out.println("\n");
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.println("°áÁ¦ÇÏ±â");
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.println("ê²°ì œí•˜ê¸°");
 
 	}
 
-	public void confirm() { //°í°´È®ÀÎ¸Ş¼Òµå
-		System.out.print("°í°´ÀÌ¸§ÀÔ·Â > ");
-		String customername = in.next();
-		for (int i = 0; i < customer.length; i++) {
-			if (customername.equals(customer[i].personname)) {
-				customer[i].setPersonproduct(productlist.get(i).productname);
-				customer[i].setPersonprice(productlist.get(i).productprice);
-				System.out.println("·Î±×ÀÎµÇ¾ú½À´Ï´Ù");
-				realpay();
+	public void confirm() { //ê³ ê°í™•ì¸ë©”ì†Œë“œ
+		int check = 0;
+		while(true) {
+			System.out.print("ê³ ê°ì´ë¦„ì…ë ¥ > ");
+
+			String customername = in.next();
+			for (int i = 0; i < customer.length; i++) {
+				if (customername.equals(customer[i].personname)) {
+					customer[i].setPersonproduct(productlist.get(i).productname);
+					customer[i].setPersonprice(productlist.get(i).productprice);
+					System.out.println("ë¡œê·¸ì¸ë˜ì—ˆìŠµë‹ˆë‹¤");
+					check = 1;
+					realpay();
+					continue;
+				}
+			}if(check ==1){
+				check = 0;
 				break;
-			}else {
-				System.out.println("´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä");
-				confirm();
+			}else if(check == 0) {
+				System.out.println("íšŒì›ì´ì•„ë‹™ë‹ˆë‹¤ ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”");
 			}
 		}
-
 	}
+
+
 
 	public void realpay() {
 
@@ -233,66 +257,75 @@ public class Menu {
 		for (int i = 0; i < productlist.size(); i++) {
 			sum += productlist.get(i).getProductprice();
 			System.out.println(" ");
-			System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-			System.out.println(customer[i].personname+"´ÔÀÇ »óÇ°");
+			System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+			System.out.println(customer[i].personname+"ë‹˜ì˜ ìƒí’ˆ");
 		}
 
-		System.out.println("¹°°ÇÀÌ¸§\t|   °¡°İ");
+		System.out.println("ë¬¼ê±´ì´ë¦„\t|   ê°€ê²©");
 		for (int i = 0; i < productlist.size(); i++) {
 			System.out.println(customer[i].getPersonproduct() +"\t|   "+ customer[i].getPersonprice());
 		}
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.println("ÃÑ °¡°İ :" + sum);
+		System.out.println("â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•");
+		System.out.println("ì´ ê°€ê²© :" + sum);
 		card();
 	}
 
 	public void card() {
-		System.out.println("¢º°áÁ¦Ã¢¢¸");
-		exit:
-		while(true) {
-			System.out.print("Ä«µå¹øÈ£ ÀÔ·Â > ");
-			int cardnumber = in.nextInt();
-			for (int i = 0; i < card.length; i++) {			
-				if (cardnumber==card[i].getCardNumber()) {
-						System.out.print("ºñ¹Ğ¹øÈ£ ÀÔ·Â > ");
+		int cardnumber;
+
+		System.out.println("\nâ–¶ê²°ì œì°½â—€");
+
+		int check = 0;
+		while(check ==0) {
+
+			try {
+				System.out.print("ì¹´ë“œë²ˆí˜¸ ì…ë ¥ > ");
+				cardnumber = in.nextInt();
+
+
+				for (int i = 0; i < card.length; i++) {			
+					if (cardnumber==card[i].getCardNumber()) {	
+
+						System.out.print("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ > ");
 						String cardpass = in.next();
+
 						if (cardpass.equals(card[i].getCardPass())) {
-							System.out.println("Ä«µåÀÔ·Â¿Ï·á");
+							System.out.println("ì¹´ë“œì…ë ¥ì™„ë£Œ");
+							check = 1;
 							payend();
-							break exit;
-						}else  {
-							System.out.println("ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
+						}else if (!cardpass.equals(card[i].getCardPass()))  {
+							System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 							break;
 						}
+
 					}
-				
-				else if (cardnumber!=card[i].getCardNumber()) {
-					System.out.println("Ä«µå¹øÈ£°¡ Æ²·È½À´Ï´Ù.´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä");
-					break;
+
+					else if (cardnumber!=card[i].getCardNumber()) {
+						System.out.println("ì¹´ë“œë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.ë‹¤ì‹œì…ë ¥í•´ì£¼ì„¸ìš”");
+						break;
+					}
 				}
-			}}
+			}
+			catch (InputMismatchException e) {
+				in = new Scanner(System.in);
+				System.out.println("ì¹´ë“œë²ˆí˜¸ëŠ” ìˆ«ìë¡œë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”");
+			}
 		}
-	
+
+		//while(true)
+
+	}
+
 
 	public void payend() {
-		System.out.println("°áÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ê²°ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		for (int i = 0; i < productlist.size(); i++) {
 			productlist.remove(i);
 		}
-		System.out.println(productlist);
+		//		System.out.println(productlist);
 		run();
 	}
 
-	public void customerdata() {
-		for (int i = 0; i < customer.length; i++) {
-			customer[i] = new Customer();
-		}
-		customer[0].setPersonname("±èÀçÇö");		
-		customer[1].setPersonname("±è°¡°¡");
-		customer[2].setPersonname("±è³ª³ª");
-		customer[3].setPersonname("±è´Ù´Ù");
-		customer[4].setPersonname("±è¶ó¶ó");
-	}
 
 	public void mouse() {
 		System.out.println("soudout");
