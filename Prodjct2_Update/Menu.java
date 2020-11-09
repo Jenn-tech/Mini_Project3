@@ -295,16 +295,19 @@ public class Menu {
 							check = 1;
 							payend();
 						}else if (!cardpass.equals(card[i].getCardPass()))  {
-							System.out.println("비밀번호가 틀렸습니다. 다시 입력해주세요");
-							break;
+							check = 0;
 						}
 
 					}
 
-					else if (cardnumber!=card[i].getCardNumber()) {
-						System.out.println("카드번호가 틀렸습니다.다시입력해주세요");
-						break;
-					}
+				}
+				if(check ==1){
+					check = 0;
+					break;
+				}else if(check == 0) {
+					System.out.println("카드번호가 틀렸습니다 다시입력해주세요");
+				}else if (check == 0) {
+					System.out.println("비밀번호가 틀렸습니다. 다시 입력해주세요");
 				}
 			}
 			catch (InputMismatchException e) {
