@@ -233,11 +233,13 @@ public class Menu {
 			String customername = in.next();
 			for (int i = 0; i < customer.length; i++) {
 				if (customername.equals(customer[i].personname)) {
-					customer[i].setPersonproduct(productlist.get(i).productname);
-					customer[i].setPersonprice(productlist.get(i).productprice);
+					System.out.println(productlist.get(0).productname);
+					customer[i].setPersonproduct(productlist.get(0).productname); //오류
+
+					customer[i].setPersonprice(productlist.get(0).productprice);
 					System.out.println("로그인되었습니다");
 					check = 1;
-					realpay();
+					realpay(customername);
 					continue;
 				}
 			}if(check ==1){
@@ -251,20 +253,18 @@ public class Menu {
 
 
 
-	public void realpay() {
+	public void realpay(String customername) {
 
 		int sum =0;
 		for (int i = 0; i < productlist.size(); i++) {
 			sum += productlist.get(i).getProductprice();
 			System.out.println(" ");
 			System.out.println("―――――――――――――――――――");
-			System.out.println(customer[i].personname+"님의 상품");
+			System.out.println(customername+"님의 상품");
 		}
 
 		System.out.println("물건이름\t|   가격");
-		for (int i = 0; i < productlist.size(); i++) {
-			System.out.println(customer[i].getPersonproduct() +"\t|   "+ customer[i].getPersonprice());
-		}
+		System.out.println(productlist.get(0).productname +"\t|   "+ productlist.get(0).productprice);
 		System.out.println("―――――――――――――――――――");
 		System.out.println("총 가격 :" + sum);
 		card();
@@ -282,8 +282,9 @@ public class Menu {
 				System.out.print("카드번호 입력 > ");
 				cardnumber = in.nextInt();
 
-
-				for (int i = 0; i < card.length; i++) {			
+				
+//				System.out.println(card.length);
+				for (int i = 0; i < card.length; i++) {		
 					if (cardnumber==card[i].getCardNumber()) {	
 
 						System.out.print("비밀번호 입력 > ");
