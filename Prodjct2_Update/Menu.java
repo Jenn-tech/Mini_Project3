@@ -270,54 +270,41 @@ public class Menu {
 		card();
 	}
 
-	public void card() {
+	public void card() { //카드결제받기
 		int cardnumber;
 
 		System.out.println("\n▶결제창◀");
 
 		int check = 0;
-		while(check ==0) {
+		while(true) {
 
 			try {
 				System.out.print("카드번호 입력 > ");
 				cardnumber = in.nextInt();
+				System.out.print("비밀번호 입력 > ");
+				String cardpass = in.next();
 
-				
-//				System.out.println(card.length);
 				for (int i = 0; i < card.length; i++) {		
-					if (cardnumber==card[i].getCardNumber()) {	
-
-						System.out.print("비밀번호 입력 > ");
-						String cardpass = in.next();
-
-						if (cardpass.equals(card[i].getCardPass())) {
-							System.out.println("카드입력완료");
-							check = 1;
-							payend();
-						}else if (!cardpass.equals(card[i].getCardPass()))  {
-							check = 0;
-						}
-
-					}
-
+					if (cardnumber==card[i].getCardNumber() && cardpass.equals(card[i].getCardPass())) {	
+						System.out.println("카드입력완료");
+						payend();
+						break;
+					}else{
+						check = 1;
+					} 
 				}
+
 				if(check ==1){
+					System.out.println("카드번호와 비밀번호를 다시입력해주세요");
 					check = 0;
-					break;
-				}else if(check == 0) {
-					System.out.println("카드번호가 틀렸습니다 다시입력해주세요");
-				}else if (check == 0) {
-					System.out.println("비밀번호가 틀렸습니다. 다시 입력해주세요");
 				}
+				//					
 			}
 			catch (InputMismatchException e) {
 				in = new Scanner(System.in);
 				System.out.println("카드번호는 숫자로만 입력해주세요");
 			}
-		}
-
-		//while(true)
-
+		}//while(true)
 	}
 
 
